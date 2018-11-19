@@ -42,12 +42,12 @@ pipeline {
         stage('Test') {
             steps {
                 sh "sleep 1s;"
-                try {
-                    sh "python --version"
-                }
-                catch (exc) {
-                    echo 'Something failed, I should sound the klaxons!'
-                }
+            }
+            try {
+                sh "python --version"
+            }
+            catch (exc) {
+                echo 'Something failed, I should sound the klaxons!'
             }
         }
 
