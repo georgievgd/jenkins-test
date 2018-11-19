@@ -21,34 +21,46 @@ pipeline {
     stages {
 
         stage('Source') {
-            checkout scm
+            steps {
+                checkout scm
+            }
         }
 
         stage('Build') {
-            sh "sleep 1s;"
-            sh "whoami;pwd;ls -al;"
+            steps {
+                sh "sleep 1s;"
+                sh "whoami;pwd;ls -al;"
+            }
         }
 
         stage('Check Styles') {
-            sh "sleep 1s;"
+            steps {
+                sh "sleep 1s;"
+            }
         }
 
         stage('Test') {
-            sh "sleep 1s;"
-            try {
-                sh "python --version"
-            }
-            catch (exc) {
-                echo 'Something failed, I should sound the klaxons!'
+            steps {
+                sh "sleep 1s;"
+                try {
+                    sh "python --version"
+                }
+                catch (exc) {
+                    echo 'Something failed, I should sound the klaxons!'
+                }
             }
         }
 
         stage('Documentation') {
-            sh "sleep 1s;"
+            steps {
+                sh "sleep 1s;"
+            }
         }
 
         stage('Deploy') {
-            sh "sleep 1s;"
+            steps {
+                sh "sleep 1s;"
+            }
         }
     }
 }
