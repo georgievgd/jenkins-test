@@ -60,7 +60,7 @@ pipeline {
     post { 
         always { 
             echo 'I will always say Hello again!'
-            notifySlack currentBuild.result
+            slackSend currentBuild.result
             echo 'Slack notified'
         }
     }
